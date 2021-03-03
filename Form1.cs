@@ -9,93 +9,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace методы
+namespace методы2
 {
     public partial class Form1 : Form
     {
-        //string file1 = @"C:\Users\ILYA\Desktop\1.txt";
-        //string file0 = @"C:\Users\ILYA\Desktop\0.txt";
+        //string word1 = "Word";
+        // string word2 = "Is";
+        //string word3 = "Word";
+        string file = @"C:\Users\ILYA\Desktop\1.txt";
+
         public Form1()
         {
-            //InitializeComponent();
-
-            //string word1 = "Word";
-            //string word2 = "Is";
-            //string word3 = "Word";
+            InitializeComponent();
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //label1.Text = "Word";
-            //Method();
-            //label1.Text = Location.ToString();
-            //label1.Text = Method();
-            //if (File.Exists(@"C:\Users\ILYA\Desktop\1.txt"))
+            //label1.Text = Slovo("Is");
+            //if (Look(file) == true)
             //{
-            //    //MessageBox.Show("Файл есть", "Есть ли файл", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            //    Method();
-            //}
-            //if (File.Exists(@"C:\Users\ILYA\Desktop\11.txt"))
-            //{
-            //    Method();
-            //}
-            //if (File.Exists(file1))
-            //{
-            //    Method("Файл есть");
+            //    label1.Text = Say(file, null);
             //}
             //else
             //{
-            //    Method("Файла нет");
+            //    label1.Text = Say(file, "не ");
             //}
-            //Method(File.Exists(@"C:\Users\ILYA\Desktop\1.txt") ? "Файл есть" : "Файла нет");
-            //if (File.Exists(file0))
-            //{
-            //    Method1();
-            //}
-            //else
-            //{
-            //    Method2();
-            //}
-
-
-            ////string Method()
-            //{
-            //    //label1.Text = "Word ";
-            //    //return Location.ToString();
-
-            //}
-            //Method("Сообщение", "Заголовок");
-
-
-            label1.Text = Slovo();
+            label1.Text = Look(file) ? Say(file, null) : Say(file, "не ");
         }
-        //Method(string message, string header)
-
-        //MessageBox.Show("Файл есть", "Есть ли файл", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        //MessageBox.Show(message, header, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-        //void Method2()
-        //{
-        //    MessageBox.Show("Файла нет", "Есть ли файл", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-        string Slovo()
+        //string Slovo(string line)
+        //{ 
+        //return $"{word1} {line} {word3}";
+        //}    
+        bool Look(string line)
         {
-
-            string word1 = "";
-            string word2 = "Is";
-            string word3 = "Word";
-            return $"{word1} {word2} {word3}";
+            //if (File.Exists(line))
+            //{
+            //    return true;
+            //}
+            //else
+            //{ 
+            //return false;
+            //}
+            return File.Exists(line) ? true : false;
         }
+        
+        string Say(string line, string line2)
+        {
+            return $"Файл\n{line}\n{line2}существует";
+        }    
     }
+
 }
-
-
-
-
-
-
-
-
-
-
